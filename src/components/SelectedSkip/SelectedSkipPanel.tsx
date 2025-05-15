@@ -59,7 +59,7 @@ const SelectedSkipPanel : React.FC = ({}) => {
 
     return ReactDom.createPortal(
         <div className={clsx('relative ',width,{'hidden':!selectedSkip})}>
-            <div className={clsx("fixed top-0 right-0 border-0 h-full bg-black p-10 flex flex-col justify-between z-50",width)}>
+            <div className={clsx("fixed top-0 right-0 border-0 h-full bg-black md:bg-white/20 px-10 md:px-5 xl:px-10 py-10 flex flex-col justify-between z-50",width)}>
                 <div>
                     <div onClick={() => setSelectedSkip(null)} className="flex items-center space-x-2 text-white mb-10 cursor-pointer hover:text-gray-400">
                         <svg width={20} height={20} fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -77,7 +77,7 @@ const SelectedSkipPanel : React.FC = ({}) => {
                 </div>
                 <div>
                     <Button>
-                        <p className="text-base font-medium uppercase">
+                        <p className="">
                             Continue
                         </p>
                         <svg width={20} height={20} fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

@@ -4,3 +4,8 @@
 body{
     background-color: black;
 }
+
+html {
+    padding-right: 0 !important;
+    overflow: visible !important;
+}

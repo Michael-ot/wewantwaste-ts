@@ -1,13 +1,14 @@
 import React from 'react';
-
+import clsx from 'clsx';
 
 type H1Props = {
     children : React.ReactNode
+    className?: string | null
 }
 
-const H1: React.FC<H1Props> = ({children}) => {
+const H1: React.FC<H1Props> = ({children,className}) => {
     return (
-        <h1 className="text-2xl sm:text-3xl font-bold mb-3 text-white">{children}</h1>
+        <h1 className={clsx("text-2xl sm:text-3xl font-bold mb-3 text-white",className)}>{children}</h1>
     );
 }
 

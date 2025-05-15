@@ -4,6 +4,8 @@ import SkipList from "../components/SkipList/SkipList";
 import type { SkipItemType } from "../types/skip";
 import SelectedSkipPanel from "../components/SelectedSkip/SelectedSkipPanel";
 import { fetchSkips } from "../utils/api";
+import Loader from "../components/Loader/Loader";
+import Error from "../components/Error/Error";
 
 const SkipSelectPage: React.FC = ()=>{
     const [skips, setSkips] = useState<SkipItemType[]>([]);
@@ -13,11 +15,17 @@ const SkipSelectPage: React.FC = ()=>{
     useEffect(() => {
         fetchSkips()
           .then(data => setSkips(data))
-          .catch((err: unknown) => setError('Failed to fetch skips.'))
+          .catch(() => setError('Failed to fetch skips.'))
           .finally(() => setIsLoading(false));
       }, []);
 
 
+    if( isLoading )
+        return <Loader></Loader> 
+
+    if (error)
+        return <Error></Error>
+    
     return (
         <>
             <div>

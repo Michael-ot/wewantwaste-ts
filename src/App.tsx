@@ -1,6 +1,6 @@
 import './styles/App.css'
 import {Suspense,lazy, useState} from 'react'
-import { Loader } from './components/Loader/Loader'
+import Loader from './components/Loader/Loader'
 
 
 const SkipSelectPage = lazy(() => import('./pages/SkipSelectPage'))
@@ -14,7 +14,7 @@ function App() {
       <Suspense fallback={<Loader></Loader>}>
         <SelectedSkipProvider>
           <div className='flex'>
-            <div className=" pt-10 mx-auto px-10 xl:w-[70%]">
+            <div className=" pt-10 mx-auto px-10 xl:w-[70%] transition-all duration-1000 ease-in-out">
                 <TopTab activeTab={activeTab} setActiveTab={setActiveTab}></TopTab>
                 <SkipSelectPage></SkipSelectPage>
             </div>

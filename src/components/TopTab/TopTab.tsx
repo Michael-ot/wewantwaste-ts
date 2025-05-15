@@ -11,7 +11,7 @@ type TabItemProps = {
 
 type TopTabProps = {
     activeTab : number,
-    setActiveTab: React.Dispatch<React.SetStateAction<number>>
+    setActiveTab?: React.Dispatch<React.SetStateAction<number>>
 }
 
 type TabType = {
@@ -32,7 +32,7 @@ const TabItem : React.FC<TabItemProps> = ({children,tab,isActive = false}) =>{
     )
 }
 
-const TopTab: React.FC<TopTabProps> = ({activeTab, setActiveTab}) => {
+const TopTab: React.FC<TopTabProps> = ({activeTab}) => {
 
     const tabs : TabType[] = [
         {
